@@ -1,0 +1,6 @@
+red
+<html><head><title> Colors </title></head><body><style>
+#one {color:darkred;text-align: center;font-size:150%;}
+</style><p id="one">
+I love sockets !
+</p></body></html>

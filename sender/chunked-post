@@ -1,0 +1,17 @@
+POST http://localhost:8080/images/dumb HTTP/1.1
+Host: server1
+Connection: close
+Transfer-encoding: chunked
+
+15
+Hi this is chunked !!
+4
+fewf
+6
+wefwef
+3
+wef
+3
+wef
+0
+

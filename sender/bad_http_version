@@ -1,0 +1,5 @@
+GET /pouetpouet HTTP/1.2
+Host: server1
+Connection: close
+
+

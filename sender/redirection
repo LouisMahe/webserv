@@ -1,0 +1,4 @@
+GET /redir307 HTTP/1.1
+Host: server1
+Connection: keep-alive
+

@@ -1,0 +1,105 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    padding-top: 10px;
+}
+
+.header {
+    text-align: center; /* Centers text horizontally */
+    padding-top: 20px;
+
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(8, 100px); /* Increased number of columns and width */
+    grid-template-rows: repeat(5, 100px); /* Increased height */
+    gap: 30px; /* Increased gap between squares */
+    justify-content: center; /* Center aligns the grid horizontally */
+    align-content: flex-start; /* Aligns the grid to the top of the container */
+    margin-top: 50px; /* Adds space above the grid */
+}
+
+.square {
+    width: 170px; /* Adjust width of square content */
+    height: 170px; /* Adjust height of square content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    transform: rotate(15deg); /* Rotate the square content */
+}
+
+.square a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transform: rotate(-15deg); /* Rotate the text content */
+}
+
+.square:hover {
+    background-color: #45a049;
+    transform: rotate(45deg); /* Rotate the square content on hover */
+}
+
+.square:hover a {
+    transform: rotate(-45deg); /* Rotate the text content on hover */
+}
+
+/* Positions the squares on the diagonal */
+.square:nth-child(1) {
+    background-color: chocolate;
+    grid-column: 3;
+    grid-row: 1; /* Adjust row position */
+}
+
+.square:nth-child(2) {
+    background-color: cornflowerblue;
+    grid-column: 4;
+    grid-row: 2; /* Adjust row position */
+}
+
+.square:nth-child(3) {
+    background-color: forestgreen;
+    grid-column: 3;
+    grid-row: 3; /* Adjust row position */
+}
+
+.square:nth-child(7)
+{
+    background-color: darkorchid;
+    grid-column: 4;
+    grid-row: 4;
+}
+
+.square:nth-child(4) {
+    background-color: lightskyblue;
+    grid-column: 5; /* Adjust column position */
+    grid-row: 1; /* Adjust row position */
+}
+
+.square:nth-child(5) {
+    background-color: darkred;
+    grid-column: 6; /* Adjust column position */
+    grid-row: 2; /* Adjust row position */
+}
+
+.square:nth-child(6) {
+    background-color: saddlebrown;
+    grid-column: 5; /* Adjust column position */
+    grid-row: 3; /* Adjust row position */
+}
+
+.square:nth-child(8) {
+    background-color:olive;
+    grid-column: 6; /* Adjust column position */
+    grid-row: 4; /* Adjust row position */
+}
