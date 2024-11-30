@@ -10,42 +10,6 @@
 
 #define EPOLL_EVENT_MAX_SIZE 100
 
-// class Pigeon
-// {
-// 	private:
-// 		int age;
-// 		int size;
-// 	public:
-// 		Pigeon();
-// 		// virtual	~Pigeon();
-// 		// virtual void	function(void);
-// };
-
-// class Zebra
-// {
-// 	private:
-// 		int  age;
-// 		unsigned long color;
-// 	public:
-// 		Zebra();
-// 		// virtual	~Zebra();
-// 		// virtual void	function(void);
-// };
-
-// Pigeon::Pigeon() {
-// 	(void)age;
-// 	(void)size;
-// }
-
-// // Pigeon::~Pigeon() {}
-// // Zebra::~Zebra() {}
-
-// Zebra::Zebra() {
-// 	(void)age;
-// 	(void)color;
-// }
-
-
 static void	catchSigPipe() {
 	struct sigaction	action_sa;
 
@@ -66,7 +30,7 @@ static void	initLogs(void)
 
 
 
-int	main(int, char **, char **env)
+int	main(int ac , char **av, char **env)
 {
 	int	epollfd = 0, nbr_events;
 	struct epoll_event	events[EPOLL_EVENT_MAX_SIZE];
@@ -79,7 +43,10 @@ int	main(int, char **, char **env)
 			LOGE("Fatal error : could not create epoll");
 			return (IControl::cleanExit(1));
 		}
-		IParseConfig::parseConfigFile("conf/template.conf");
+		if (ac < 2)
+			IParseConfig::parseConfigFile("conf/template.conf");
+		else
+			IParseConfig::parseConfigFile(av[1]);
 		CGIProcess::_env = env;
 		IControl::_epollfd = epollfd;
 		if (IControl::registerCommandPrompt())
